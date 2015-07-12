@@ -1,13 +1,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFFFF"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.jebysun.android.maptracker.MainActivity" >
+    android:layout_height="match_parent">
+    
+    <RelativeLayout android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/orange">
+      	<TextView android:id="@+id/info"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent"
+	    	android:text="轨迹跟踪"
+	    	android:textColor="#FFFFFFFF"
+	    	android:textSize="20sp"
+	    	android:gravity="center"/>
+    </RelativeLayout>
+    
+    <LinearLayout android:id="@+id/action"
+        android:layout_below="@id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+      	
+        <Button android:id="@+id/btn_track"
+	        android:layout_width="match_parent"
+	        android:layout_height="44dp"
+	        android:text="开始记录"/>
+        <Button android:id="@+id/btn_record_list"
+	        android:layout_width="match_parent"
+	        android:layout_height="44dp"
+	        android:text="轨迹记录列表"/>
+	    <Button android:id="@+id/btn_map_view"
+	        android:layout_width="match_parent"
+	        android:layout_height="44dp"
+	        android:text="轨迹地图"/>
+	    <Button android:id="@+id/btn_txt_view"
+	        android:layout_width="match_parent"
+	        android:layout_height="44dp"
+	        android:text="轨迹详细信息"/>
+        
+    </LinearLayout>
+    
 
-	<com.baidu.mapapi.map.MapView  
-	    android:id="@+id/bmapView"  
-	    android:layout_width="fill_parent"  
-	    android:layout_height="fill_parent"  
-	    android:clickable="true" />
 
+    
 </RelativeLayout>
+
