@@ -20,7 +20,7 @@
       	<TextView android:id="@+id/info"
 	    	android:layout_width="match_parent"
 	    	android:layout_height="match_parent"
-	    	android:text="历史轨迹"
+	    	android:text="我的轨迹"
 	    	android:textColor="#FFFFFFFF"
 	    	android:textSize="20sp"
 	    	android:gravity="center"/>
@@ -33,6 +33,16 @@
             android:background="@drawable/selector_button_alpha"
             android:src="@drawable/icon_settings"/>
     </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/listview"
+        android:layout_below="@id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:divider="#FFFFFFFF" 
+		android:dividerHeight="4dp">
+    </ListView>
     
     
 </RelativeLayout>

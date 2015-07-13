@@ -51,6 +51,12 @@ public class MapActivity extends Activity {
 		mMapView.showZoomControls(false);
 		mBaiduMap.getUiSettings().setOverlookingGesturesEnabled(false);
 		
+		MapStatus mMapStatus = new MapStatus.Builder()
+	    .zoom(14)
+	    .build();
+	    MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
+	    mBaiduMap.animateMapStatus(mMapStatusUpdate);
+		
 		btnZoomIn = (ImageButton)this.findViewById(R.id.btn_zoomin);
 		btnZoomOut = (ImageButton)this.findViewById(R.id.btn_zoomout);
 		btnZoomIn.setOnClickListener(new OnClickListener() {
