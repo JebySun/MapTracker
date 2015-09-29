@@ -27,7 +27,6 @@ public class MainActivity extends Activity {
 		btnMapView.setOnClickListener(mainListener);
 		btnTxtView.setOnClickListener(mainListener);
 		
-		
 	}
 	
 	class MainMenuClickListener implements OnClickListener {

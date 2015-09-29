@@ -19,12 +19,18 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.geocode.GeoCodeResult;
+import com.baidu.mapapi.search.geocode.GeoCoder;
+import com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeOption;
+import com.baidu.mapapi.search.geocode.ReverseGeoCodeResult;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MapActivity extends Activity {
 
@@ -79,6 +85,33 @@ public class MapActivity extends Activity {
 		//设置地图中心点
 		MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(points.get(0));
 		mBaiduMap.animateMapStatus(u);
+		
+		
+		//////
+		searchGeo();
+	}
+	
+	//百度地图地址编码互查测试
+	private void searchGeo() {
+		GeoCoder mSearch = null;
+		mSearch = GeoCoder.newInstance();
+		mSearch.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
+			@Override
+			public void onGetGeoCodeResult(GeoCodeResult arg0) {
+
+			}
+
+			@Override
+			public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
+				System.out.println(result.getAddress());
+				Toast.makeText(MapActivity.this, result.getAddress(), 0).show();
+			}
+
+		});
+		  
+		  
+		  LatLng ptCenter = new LatLng(31.157153, 120.51721);
+		  mSearch.reverseGeoCode(new ReverseGeoCodeOption().location(ptCenter));
 	}
 	
 	private void init() {
