@@ -83,8 +83,8 @@ public class RecordListActivity extends Activity implements OnItemClickListener 
     	map = new HashMap<String, Object>();
     	map.put("year", "2015");
     	map.put("month", "02");
-    	map.put("week", "星期无");
-    	map.put("title", "星期日逛街买东西");
+    	map.put("week", "星期三");
+    	map.put("title", "逛街买东西");
     	map.put("mileage", "12.5km");
     	map.put("timetake", "02:25:56");
     	map.put("speed", "3.6km/h");
